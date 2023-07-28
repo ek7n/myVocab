@@ -1,5 +1,5 @@
 <template>
-  <div class="p-4 mx-4">
+  <div class="p-4 mx-4 my-2">
     <nuxtLink class="text-orange-500" to="/home"> Home </nuxtLink>
     <h1 class="mb-6 text-5xl">Words!</h1>
     <div class="flex justify-between align-start flex-wrap gap-4 max-w-">

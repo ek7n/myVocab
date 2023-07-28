@@ -3,7 +3,7 @@
     <nuxtLink class="text-orange-500" to="/home"> Home </nuxtLink>
     <h1 class="mb-6 text-5xl">Words!</h1>
     <div class="flex justify-between align-start flex-wrap gap-4 max-w-">
-      <div class="" v-for="w in words">
+      <div class="" v-for="w in words" v-bind:key="w.id">
         <div class="max-w-xs">
           <img src="https://cdn.pixabay.com/photo/2014/07/02/13/39/media-room-382157_1280.jpg" alt="" srcset="">
         <nuxtLink class="text-3xl mt-6" :to="`words/${w.word}`">{{w.word}}</nuxtLink>

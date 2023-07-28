@@ -1,24 +1,19 @@
 <template>
   <div>
-    
-  
-    <!-- <p>Words! {{wordz}}</p> -->
-  
-    
 
-    <div v-for="w in wordz">
+    <div v-for="w in wordz" v-bind:key="w.id">
         <h1>{{w.word}}</h1>
         <p>{{w.phonetic}}</p>
-        <div v-for="m in w.meanings">
+        <div v-for="m in w.meanings" v-bind:key="m.id">
           <p>{{m.partOfSpeech}}</p>
-          <div v-for="d in m.definitions">
+          <div v-for="d in m.definitions" v-bind:key="d.id">
             <p>{{d.definition}}</p>
           <p>{{d.example}}</p>
-          <div v-for="s in d.synonyms">
+          <div v-for="s in d.synonyms" v-bind:key="s.id">
             <p>SYN</p>
             <p>{{s}}</p>
           </div>
-          <div v-for="a in d.antonyms">
+          <div v-for="a in d.antonyms" v-bind:key="a.id">
             <p>ANT</p>
             <p>{{a}}</p>
           </div>

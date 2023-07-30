@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="bg-slate-100">
     <p class="">Some vocab!</p>
     <div class=" ">
       <div class="">

@@ -1,20 +1,27 @@
 <template>
-  <div>
+  <div class="p-2 bg-orange-50 main">
 
     <div v-for="w in wordz" v-bind:key="w.id">
-        <h1>{{w.word}}</h1>
-        <p>{{w.phonetic}}</p>
-        <div v-for="m in w.meanings" v-bind:key="m.id">
-          <p>{{m.partOfSpeech}}</p>
+        <div class="flex gap-2 my-4">
+          <h1 class="text-4xl">{{w.word}}</h1>
+        <p class="mt-1">{{w.phonetic}}</p>
+        </div>
+        <div class="bg-orange-100 p-2 rounded-md" v-for="m in w.meanings" v-bind:key="m.id">
+          <div class="flex gap-2">
+            <div class="bg-orange-200 rounded-md p-1">{{w.meanings.indexOf(m)+1}}</div>
+          <p class="bg-orange-200 rounded-md p-1">{{m.partOfSpeech}}</p>
+          </div>
+        
           <div v-for="d in m.definitions" v-bind:key="d.id">
             <p>{{d.definition}}</p>
           <p>{{d.example}}</p>
-          <div v-for="s in d.synonyms" v-bind:key="s.id">
-            <p>SYN</p>
+          
+          <div class="flex gap-2" v-for="s in d.synonyms" v-bind:key="s.id">
+            <p>syn</p>
             <p>{{s}}</p>
           </div>
-          <div v-for="a in d.antonyms" v-bind:key="a.id">
-            <p>ANT</p>
+          <div class="flex gap-2" v-for="a in d.antonyms" v-bind:key="a.id">
+            <p>ant</p>
             <p>{{a}}</p>
           </div>
           
@@ -22,7 +29,7 @@
           
         </div>
         
-        <hr>
+        
     </div>
 
   </div>

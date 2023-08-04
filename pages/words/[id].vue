@@ -1,15 +1,21 @@
 <template>
-  <div class="p-2 bg-orange-50 main">
+  <div class="p-2 bg-white-200 main">
 
     <div v-for="w in wordz" v-bind:key="w.id">
-        <div class="flex gap-2 my-4">
-          <h1 class="text-4xl">{{w.word}}</h1>
+      
+        <div class="flex justify-between gap-2 my-4">
+         <div>
+           <h1 class="text-4xl">{{w.word}}</h1>
         <p class="mt-1">{{w.phonetic}}</p>
+         </div>
+        <div class="mt-1 pb-0 bg-blue-50 text-2xl p-2 rounded-md">
+          <p class="mb-">Example</p>
         </div>
-        <div class="bg-orange-100 p-2 rounded-md" v-for="m in w.meanings" v-bind:key="m.id">
+        </div>
+        <div class="bg-orange-200 p-2 rounded-md mb-1" v-for="m in w.meanings" v-bind:key="m.id">
           <div class="flex gap-2">
-            <div class="bg-orange-200 rounded-md p-1">{{w.meanings.indexOf(m)+1}}</div>
-          <p class="bg-orange-200 rounded-md p-1">{{m.partOfSpeech}}</p>
+            <div class="bg-orange-300 rounded-md p-1">{{w.meanings.indexOf(m)+1}}</div>
+          <p class="bg-orange-300 rounded-md p-1">{{m.partOfSpeech}}</p>
           </div>
         
           <div v-for="d in m.definitions" v-bind:key="d.id">

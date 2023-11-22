@@ -3,7 +3,10 @@ export default {
     preset: 'vercel-edge',
   },
   modules: [
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/tailwindcss',
+    ['@nuxtjs/google-adsense', {
+      id: 'ca-pub-7087643124045192'
+    }]
   ],
   runtimeConfig: { 
       apiSecret:'ertert',

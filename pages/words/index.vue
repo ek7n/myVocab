@@ -2,6 +2,14 @@
   <div class="p-4 px-6 m-4 rounded-lg  bg-orange-50 mai">
     <nuxtLink class="text-orange-500 text-2xl" to="/home"> Home </nuxtLink>
     <h1 class="my-4 text-5xl">Words!</h1>
+    <!-- <div class="flex  justify-between align-start flex-wrap  gap-2 ">
+<div class="bg-white  rounded-md " v-for="week in weeks" v-bind:key="week.id">
+      <div class="p-6">
+        <nuxtLink class="text-3xl p-3" to="/a">Week {{week}}</nuxtLink>
+      </div>
+    </div>
+    </div> -->
+  
     <div class="flex justify-between align-start flex-wrap  gap-4 max-w-">
       <div class="bg-white  rounded-md" v-for="w in words" v-bind:key="w.id">
         <div class="max-w-xs mb-2">
@@ -15,7 +23,7 @@
         <div v-if="w.partOfSpeech=='verb'" class="has-textweight-black bg-orange-200 m-2 p-2 rounded-md ">{{w.partOfSpeech}}</div>
         <div v-if="w.partOfSpeech=='adjective'" class="has-textweight-black bg-purple-200 m-2 p-2 rounded-md ">{{w.partOfSpeech}}</div>
        </div>
-        <p class="has-textweight-black p-3 truncate is-size-2">{{w.definition}}</p>
+        <p class="has-textweight-black p-3 truncat is-size-2">{{w.definition}}</p>
         </div><!-- <p>{{w.word}}</p> -->
         
         
@@ -26,6 +34,8 @@
 </template>
 
 <script setup>
+
+const weeks =[1,2,3,4]
 
 const words = [
   {

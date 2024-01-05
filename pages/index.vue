@@ -4,7 +4,7 @@
       <h1 class="px-6 mb-6 text-5xl">BAND8</h1>
       <p class="px-6 mb-6">Discover a world of knowledge and fun with our captivating content. We have carefully curated a diverse range of articles, blogs, and quizzes to cater to your interests and curiosities.</p>
     </div>
-     <div class="flex gap-4 mx-4 justify-center align-center flex-wrap  ">
+     <div class="flex gap-4 mx-2 justify-center align-center flex-wrap  ">
       <div class=" flex flex-col justify-center rounded-md align-center bg-orange-200 p-6">
         <nuxtLink class="text-5xl px-6 mb-6 " to="words"> Words</nuxtLink>
         <p class="px-6 mb-6">Discover a world of knowledge and fun with our captivating content. We have carefully curated a diverse range of articles, blogs, and quizzes to cater to your interests and curiosities.</p>

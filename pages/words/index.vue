@@ -1,6 +1,6 @@
 <template>
   <div class="p-4 px-6 m-4 rounded-lg  bg-orange-50 mai">
-    <nuxtLink class="text-orange-500 text-2xl" to="/home"> Home </nuxtLink>
+    <nuxtLink class="text-orange-500 text-2xl" to="/"> Home </nuxtLink>
     <h1 class="my-4 text-5xl">Words!</h1>
     <!-- <div class="flex  justify-between align-start flex-wrap  gap-2 ">
 <div class="bg-white  rounded-md " v-for="week in weeks" v-bind:key="week.id">

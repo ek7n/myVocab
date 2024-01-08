@@ -8,9 +8,9 @@
            <h1 class="text-4xl">{{w.word}}</h1>
         <p class="mt-1">{{w.phonetic}}</p>
          </div>
-        <div class="mt-1 pb-0 bg-blue-50 text-2xl p-2 rounded-md">
+        <!-- <div class="mt-1 pb-0 bg-blue-50 text-2xl p-2 rounded-md">
           <p class="mb-">Example</p>
-        </div>
+        </div> -->
         </div>
         <div class="bg-orange-200 p-2 rounded-md mb-1" v-for="m in w.meanings" v-bind:key="m.id">
           <div class="flex gap-2">

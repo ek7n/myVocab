@@ -1,40 +1,26 @@
 <template>
-  <div class="p-4 px-6 m-4 rounded-lg  bg-orange-50 mai">
-    <nuxtLink class="text-orange-500 text-2xl" to="/"> Home </nuxtLink>
-    <h1 class="my-4 text-5xl">Words!</h1>
-    <!-- <div class="flex  justify-between align-start flex-wrap  gap-2 ">
-<div class="bg-white  rounded-md " v-for="week in weeks" v-bind:key="week.id">
-      <div class="p-6">
-        <nuxtLink class="text-3xl p-3" to="/a">Week {{week}}</nuxtLink>
+<div class="p-4 px-6 m-4 rounded-lg bg-orange-50 overflow-hidden">
+  <nuxt-link class="text-orange-500 text-2xl" to="/">Home</nuxt-link>
+  <h1 class="my-4 text-5xl">Words!</h1>
+
+  <div class="flex justify-between items-start flex-wrap gap-4">
+    <div class="bg-white rounded-md" v-for="w in words" v-bind:key="w.id">
+      <div class="max-w-xs mb-2">
+        <div class="flex justify-between items-center">
+          <nuxt-link class="text-3xl p-3" :to="`words/${w.word}`">{{ w.word }}</nuxt-link>
+          <div class="flex justify-between items-center">
+            <div v-if="w.partOfSpeech == 'noun'" class="text-black bg-green-200 m-2 p-2 rounded-md">{{ w.partOfSpeech }}</div>
+            <div v-if="w.partOfSpeech == 'verb'" class="text-black bg-orange-200 m-2 p-2 rounded-md">{{ w.partOfSpeech }}</div>
+            <div v-if="w.partOfSpeech == 'adjective'" class="text-black bg-purple-200 m-2 p-2 rounded-md">{{ w.partOfSpeech }}</div>
+            <div class="text-black bg-red-200 m-2 p-2 rounded-md">{{ w.cefrLevel }}</div>
+          </div>
+        </div>
+        <p class="text-black p-3 truncate">{{ w.definition }}</p>
       </div>
     </div>
-    </div> -->
-  
-    <div class="flex justify-between align-start flex-wrap  gap-4 max-w-">
-      <div class="bg-white  rounded-md" v-for="w in words" v-bind:key="w.id">
-        <div class="max-w-xs mb-2">
-         <!--  <img src="https://cdn.pixabay.com/photo/2014/07/02/13/39/media-room-382157_1280.jpg" alt="" srcset=""> -->
-          <!-- <img  :src="`https://pixabay.com/api/?key=38569171-f1197dd247f175e2d3791625a&q=${w.word}`" alt="Placeholder image"> -->
-         <!--  <img  :src="arr[w.index]" alt="Placeholder image"> -->
-          
-       <div class="flex justify-between ">
-         <nuxtLink class="text-3xl  p-3 " :to="`words/${w.word}`">{{w.word}}</nuxtLink>
-        <div class="flex justify-between">
-          <div v-if="w.partOfSpeech=='noun'" class="has-textweight-black bg-green-200 m-2 p-2 rounded-md ">{{w.partOfSpeech}}</div>
-        <div v-if="w.partOfSpeech=='verb'" class="has-textweight-black bg-orange-200 m-2 p-2 rounded-md ">{{w.partOfSpeech}}</div>
-        <div v-if="w.partOfSpeech=='adjective'" class="has-textweight-black bg-purple-200 m-2 p-2 rounded-md ">{{w.partOfSpeech}}</div>
-       <div class="has-textweight-black bg-red-200 m-2 p-2 rounded-md ">{{w.cefrLevel}}</div>
-        </div>
-        
-       </div>
-        <p class="has-textweight-black p-3 truncat is-size-2">{{w.definition}}</p>
-        </div><!-- <p>{{w.word}}</p> -->
-        
-        
-    </div>
-    </div>
-    
   </div>
+</div>
+
 </template>
 
 <script setup>

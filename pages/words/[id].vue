@@ -60,7 +60,7 @@ const  {data:wordz}  = await useFetch(`https://api.dictionaryapi.dev/api/v2/entr
 const GUARDIAN_API_KEY = "2bab73a6-7dde-4347-8658-c32b3c6453d9"
 
 
-const guardianUrl = `http://content.guardianapis.com/search?q=${id}&api-key=${GUARDIAN_API_KEY}`
+const guardianUrl = `https://content.guardianapis.com/search?q=${id}&api-key=${GUARDIAN_API_KEY}`
 const  {data:guardLink}  = await useFetch(guardianUrl);
 
 /* console.log("a",guardLink.value.response.results) */

@@ -34,7 +34,7 @@
     <div class="flex flex-wrap gap-4">
       <div v-for="item in guardLink.response.results" v-bind:key="item.index" class="max-w-sm rounded overflow-hidden shadow-lg">
         <div class="p-6">
-          <a :href="item.webUrl" class="font-bold text-xl mb-2 block">{{ item.webTitle }}</a>
+          <a :href="item.webUrl" title="This link leads to a guardian.com article that contains the word" class="font-bold text-xl mb-2 block">{{ item.webTitle }}</a>
           <!-- <p class="text-gray-700 text-base mb-4">
             Some quick example text to build on the card title and make up the bulk of the card's content.
           </p> -->

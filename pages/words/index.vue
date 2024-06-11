@@ -15,7 +15,7 @@
             <div class="text-black bg-red-200 m-2 p-2 rounded-md">{{ w.cefrLevel }}</div>
           </div>
         </div>
-        <p class="text-black p-3 truncate">{{ w.definition }}</p>
+        <p class="text-black p-3 truncat">{{ w.definition }}</p>
       </div>
     </div>
   </div>
@@ -130,6 +130,69 @@ const words = [
     "word": "disconcerted",
     "partOfSpeech": "adjective",
     "definition": "Feeling unsettled, confused, or embarrassed.",
+    "week": 1,
+    "cefrLevel": "C1"
+  },
+    {
+    "word": "banter",
+    "partOfSpeech": "noun",
+    "definition": "Playful or friendly exchange of teasing remarks.",
+    "week": 1,
+    "cefrLevel": "B2"
+  },
+  {
+    "word": "bestow",
+    "partOfSpeech": "verb",
+    "definition": "To give something as an honor or present.",
+    "week": 1,
+    "cefrLevel": "C1"
+  },
+  {
+    "word": "bigotry",
+    "partOfSpeech": "noun",
+    "definition": "Intolerance towards those who are different or hold different views.",
+    "week": 1,
+    "cefrLevel": "C1"
+  },
+  {
+    "word": "cede",
+    "partOfSpeech": "verb",
+    "definition": "To give up power or territory.",
+    "week": 1,
+    "cefrLevel": "B2"
+  },
+  {
+    "word": "tamp down",
+    "partOfSpeech": "phrasal verb",
+    "definition": "To reduce the amount, level, size, or importance of something.",
+    "week": 1,
+    "cefrLevel": "C1"
+  },
+  {
+    "word": "cupid",
+    "partOfSpeech": "noun",
+    "definition": "A figure in Roman mythology who causes people to fall in love, often depicted as a young boy with wings and a bow and arrow.",
+    "week": 1,
+    "cefrLevel": "B2"
+  },
+  {
+    "word": "corral",
+    "partOfSpeech": "verb",
+    "definition": "To gather together and confine (a group of people or things).",
+    "week": 1,
+    "cefrLevel": "C1"
+  },
+  {
+    "word": "commence",
+    "partOfSpeech": "verb",
+    "definition": "To begin or start.",
+    "week": 1,
+    "cefrLevel": "B2"
+  },
+  {
+    "word": "contort",
+    "partOfSpeech": "verb",
+    "definition": "To twist or bend out of the normal shape.",
     "week": 1,
     "cefrLevel": "C1"
   }

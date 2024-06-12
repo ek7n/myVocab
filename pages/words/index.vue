@@ -3,15 +3,44 @@
   <nuxt-link class="text-orange-500 text-2xl" to="/">Home</nuxt-link>
   <h1 class="my-4 text-5xl">Words!</h1>
 
+<div class="flex gap-2 flex-wrap">
+  <div class="mb-4">
+      <label for="cefrFilter" class="mr-2">Filter by CEFR Level:</label>
+      <select id="cefrFilter" v-model="selectedCefrLevel" class="p-2 border rounded">
+        <option value="">All Levels</option>
+        <!-- <option value="A1">A1</option> -->
+        <!-- <option value="A2">A2</option> -->
+        <option value="B1">B1</option>
+        <option value="B2">B2</option>
+        <option value="C1">C1</option>
+        <!-- <option value="C2">C2</option> -->
+      </select>
+    </div>
+
+     <div>
+        <label for="partOfSpeechFilter" class="mr-2">Filter by Part of Speech:</label>
+        <select id="partOfSpeechFilter" v-model="selectedPartOfSpeech" class="p-2 border rounded">
+          <option value="">All Parts of Speech</option>
+          <option value="noun">Noun</option>
+          <option value="verb">Verb</option>
+          <option value="adjective">Adjective</option>
+          <option value="adverb">Adverb</option>
+          <option value="phrasal verb">Phrasal verb</option>
+        </select>
+      </div>
+
+  </div>  
+
+
   <div class="flex justify-between items-start flex-wrap gap-4">
-    <div class="bg-white rounded-md" v-for="w in words" v-bind:key="w.id">
+    <div class="bg-white rounded-md" v-for="w in filteredWords" v-bind:key="w.id">
       <div class="max-w-xs mb-2">
         <div class="flex justify-between items-center">
           <nuxt-link class="text-3xl p-3" :to="`words/${w.word}`">{{ w.word }}</nuxt-link>
           <div class="flex justify-between items-center">
-            <div v-if="w.partOfSpeech == 'noun'" class="text-black bg-green-200 m-2 p-2 rounded-md">{{ w.partOfSpeech }}</div>
-            <div v-if="w.partOfSpeech == 'verb'" class="text-black bg-orange-200 m-2 p-2 rounded-md">{{ w.partOfSpeech }}</div>
-            <div v-if="w.partOfSpeech == 'adjective'" class="text-black bg-purple-200 m-2 p-2 rounded-md">{{ w.partOfSpeech }}</div>
+            <div :class="partOfSpeechClass(w.partOfSpeech)" class="text-black bg-green-200 m-2 p-2 rounded-md">{{ w.partOfSpeech }}</div>
+           <!--  <div v-if="w.partOfSpeech == 'verb'" class="text-black bg-orange-200 m-2 p-2 rounded-md">{{ w.partOfSpeech }}</div>
+            <div v-if="w.partOfSpeech == 'adjective'" class="text-black bg-purple-200 m-2 p-2 rounded-md">{{ w.partOfSpeech }}</div> -->
             <div class="text-black bg-red-200 m-2 p-2 rounded-md">{{ w.cefrLevel }}</div>
           </div>
         </div>
@@ -24,8 +53,27 @@
 </template>
 
 <script setup>
+import { ref, computed } from 'vue';
 
-const weeks =[1,2,3,4]
+const selectedCefrLevel = ref('');
+const selectedPartOfSpeech = ref('');
+
+
+/* const filteredWords = computed(() => {
+  console.log(selectedCefrLevel.value)
+  if (!selectedCefrLevel.value) {
+    return words;
+  }
+  return words.filter(word => word.cefrLevel === selectedCefrLevel.value);
+}); */
+
+const filteredWords = computed(() => {
+  return words.filter(word => {
+    const matchesCefrLevel = selectedCefrLevel.value ? word.cefrLevel === selectedCefrLevel.value : true;
+    const matchesPartOfSpeech = selectedPartOfSpeech.value ? word.partOfSpeech === selectedPartOfSpeech.value : true;
+    return matchesCefrLevel && matchesPartOfSpeech;
+  });
+});
 
 const words = [
   {
@@ -199,35 +247,19 @@ const words = [
 ]
 ;
 
+const partOfSpeechClass = (partOfSpeech) => {
+  switch (partOfSpeech) {
+    case 'noun':
+      return 'bg-green-200';
+    case 'verb':
+      return 'bg-orange-200';
+    case 'adjective':
+      return 'bg-purple-200';
+    default:
+      return '';
+  }}
 
 
-const runtimeConfig = useRuntimeConfig()
-console.log(runtimeConfig.API_KEY)
-/* console.log(runtimeConfig.apiSecret) */
-
-function getWordsFromObjectArray(objectArray) {
-  const words = objectArray.map((item) => item.word);
-  console.log(words)
-  return words;
-}
-
-let myWords = getWordsFromObjectArray(words);
-
-let API_KEY = runtimeConfig.API_KEY
-
-const arr = [];
-
-/* myWords.map(async element => {
-  const {data:a} = await useFetch("https://pixabay.com/api/?key="+API_KEY+"&q="+encodeURIComponent(element))
-  
-  arr.push(a._rawValue.hits[0].pageURL);
-  
-  
-  return arr;
-
-}); */
-
-console.log(arr) 
 
 
 

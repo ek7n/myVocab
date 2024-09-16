@@ -41,10 +41,26 @@ const blogs = [
   },
   {
     "id":2,
-     "title":"Some vocab to describe EU structure ",
+    "title":"Some vocab to describe EU structure ",
     "contentBrief": "Discover the rich meanings and origins of tapestry, bedrock, partake, and epitomize in our captivating blog.",
     "tags": ["reading", "skimming"],
     "whereTo":"adverbs2"
+
+  },
+  {
+    "id":3,
+    "title":"B2 level vocabulary booster ",
+    "contentBrief": "Discover the meanings of these B2 level words!🥳",
+    "tags": ["reading", "skimming"],
+    "whereTo":"vocab-lure"
+
+  },
+  {
+    "id":4,
+    "title":"Synonyms for emphasize ",
+    "contentBrief": "Discover the ways of using the verb in a different way!🥳",
+    "tags": ["reading", "skimming"],
+    "whereTo":"emphasize"
 
   }
   

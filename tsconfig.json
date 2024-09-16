@@ -1,5 +1,12 @@
 {
   // https://v3.nuxtjs.org/concepts/typescript
   "extends": "./.nuxt/tsconfig.json",
+  "compilerOptions": {
+    // Diğer ayarlarınız
+    "typeRoots": ["./types", "./node_modules/@types"],
+    "types": [], // Eğer mevcutsa, boş bir dizi olarak bırakın veya kendi tiplerinizi ekleyin
+    // ...
+  },
+  "include": ["./types/**/*.d.ts", "./**/*.ts", "./**/*.vue"]
   
 }

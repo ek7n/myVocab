@@ -22,14 +22,14 @@
       </div>
     </section>
     <section>
-      <div class="flex gap-4 mx-2 mt-6 justify-center items-center flex-wrap">
+      <div class="flex gap-4 mx-2 mt-6 justify-center items-center  ">
         <div class="main-boxes flex flex-col justify-center items-center bg-orange-200 p-6 rounded-md">
           <nuxt-link class="text-5xl mb-6 font-semibold" to="words">Words</nuxt-link>
           
           <p class="text-justify text-xl">Enhance your vocabulary with our curated list of words, complete with definitions and usage examples.</p>
         </div>
         
-        <div class="flex flex-col items-center bg-orange-200 p-6 rounded-md">
+        <div class="main-boxes flex flex-col justify-center items-center bg-orange-200 p-6 rounded-md">
           <nuxt-link class="text-5xl mb-6 font-semibold" to="blogs">Blogs</nuxt-link>
           <p class="text-justify text-xl">Explore a variety of topics in our engaging blogs, featuring insights and tips from passionate writers.</p>
         </div>
@@ -64,7 +64,13 @@
 
 .main {
   flex: 1;
-  padding-top: 5rem; /* Navbar'ın yüksekliği kadar boşluk bırakın */
+  padding-top: 6rem; 
+
+}
+
+.main-boxes {
+  min-height: 40vh;
+  
 }
 
 .footer {

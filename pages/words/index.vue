@@ -1,7 +1,12 @@
 <template>
 <div class="p-4 px-6 m-4 rounded-lg bg-orange-50 overflow-hidden">
-  <nuxt-link class="text-orange-500 text-2xl" to="/">Home</nuxt-link>
+  <div class="flex justify-between">
+    <nuxt-link class="text-orange-500 text-2xl" to="/">Home</nuxt-link>
+  <nuxt-link class="text-orange-500 text-2xl" @click="goBack">Back</nuxt-link>
+  </div>
   <h1 class="my-4 text-5xl">Words!</h1>
+  
+  
 
 <div class="flex gap-2 flex-wrap">
   <div class="mb-4">
@@ -54,6 +59,10 @@
 
 <script setup>
 import { ref, computed } from 'vue';
+
+const goBack = () => {
+  window.history.back();
+};
 
 const selectedCefrLevel = ref('');
 const selectedPartOfSpeech = ref('');
